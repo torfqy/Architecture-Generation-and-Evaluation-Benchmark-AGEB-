@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="AGEB Banner" width="100%">
+  <img src="assets/banner.png" alt="AGEB Banner" width="100%">
 </p>
 
 <h1 align="center">AGEB: Architecture Generation and Evaluation Benchmark</h1>
