@@ -1,54 +1,72 @@
-# AGEB: Architecture Generation and Evaluation Benchmark
+<p align="center">
+  <img src="assets/workflow.png" alt="AGEB Workflow" width="75%">
+</p>
 
-This repository packages the code and assets used in the paper "LLMs Are Not Yet Reliable for Generating Architectural Design Images: A Comprehensive Evaluation Framework and Benchmark Suite (AGEB)".
+<h1 align="center">AGEB: Architecture Generation and Evaluation Benchmark</h1>
 
-## What is AGEB?
-AGEB is a domain-grounded, automated benchmark for evaluating architectural text-to-image systems along three pillars:
-- Semantic fidelity (dual-expert chain-of-thought evaluation)
-- Functional adequacy (graph-theoretic circulation analysis)
-- Geometric consistency (perspective analysis)
+<p align="center">
+  <a href="https://github.com/torfqy/Architecture-Generation-and-Evaluation-Benchmark-AGEB-/stargazers"><img src="https://img.shields.io/github/stars/torfqy/Architecture-Generation-and-Evaluation-Benchmark-AGEB-?style=flat-square" alt="GitHub Stars"></a>
+  <a href="https://github.com/torfqy/Architecture-Generation-and-Evaluation-Benchmark-AGEB-/issues"><img src="https://img.shields.io/github/issues/torfqy/Architecture-Generation-and-Evaluation-Benchmark-AGEB-?style=flat-square" alt="Issues"></a>
+  <a href="https://github.com/torfqy/Architecture-Generation-and-Evaluation-Benchmark-AGEB-/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License"></a>
+</p>
 
-## Repository Layout
-- `src/` — Core scripts for data generation, figure creation, and evaluation
-  - `orchestrator.py` — Entry point to run end-to-end experiments
-  - `circulation_analysis.py` — Functional/circulation evaluation
-  - `perspective_analysis.py` — Geometric/perspective evaluation
-  - `create_*`, `fix_*`, `generate_*` — Utilities for figures and processes
-- `src/analysis/` — Aggregation and analysis
-  - `comprehensive_analysis.py` — Aggregates results and produces summary tables/figures
-- `configs/` — (Optional) Place YAML/JSON configs here if you extend runs
-- `docs/` — Extra documentation (e.g., analysis notes)
-- `requirements.txt` — Python dependencies
+> LLMs are **not yet reliable** for generating architectural design images. AGEB provides a domain-grounded, automated benchmark to measure semantic fidelity, functional adequacy, and geometric consistency.
 
-## Environment Setup
+## ✨ Highlights
+- Unified, automated **benchmarking pipeline** for architectural text-to-image systems
+- Three pillars: **Semantic (COT)** · **Functional (Circulation)** · **Geometric (Perspective)**
+- Reproducible **orchestrator** + analysis scripts to aggregate results
+- Clear **reliability finding**: not yet reliable under professional constraints
+
+## 📦 Repository Structure
+```
+ageb/
+├── assets/
+│   ├── workflow.png
+│   └── cot_workflow.png
+├── configs/
+├── docs/
+├── requirements.txt
+├── src/
+│   ├── orchestrator.py
+│   ├── perspective_analysis.py
+│   ├── circulation_analysis.py
+│   ├── create_* / fix_* / generate_* utilities
+│   └── analysis/
+│       └── comprehensive_analysis.py
+└── README.md
+```
+
+## 🚀 Quick Start
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-## Minimal Reproduction
-1) Run the core evaluators (modify inputs/paths inside scripts as needed):
-```bash
 python src/orchestrator.py
 ```
-2) Run geometric and functional submodules directly if desired:
-```bash
-python src/perspective_analysis.py
-python src/circulation_analysis.py
-```
-3) Aggregate results and build tables/figures:
-```bash
-python src/analysis/comprehensive_analysis.py
-```
 
-## Expected Inputs/Outputs
-- Inputs: prompts, model outputs (images/metadata), and config paths referenced inside `orchestrator.py`.
-- Outputs: JSON/CSV summaries, figures (e.g., perspective pipeline, performance comparisons).
+## 🔬 Reproduction Steps
+1. Prepare model outputs (images/metadata) and set paths in `src/orchestrator.py`
+2. Run submodules if needed:
+   ```bash
+   python src/perspective_analysis.py
+   python src/circulation_analysis.py
+   ```
+3. Aggregate and export figures/tables:
+   ```bash
+   python src/analysis/comprehensive_analysis.py
+   ```
 
-## Notes
-- Some scripts expect pre-generated model outputs (see your `*-results/` folders in the project root). Adjust paths in scripts accordingly.
-- If you publish, pin exact package versions from `requirements.txt` and capture your commit hashes.
+## 🧠 Method Overview
+<p align="center">
+  <img src="assets/cot_workflow.png" alt="COT Workflow" width="70%">
+</p>
 
-## Citation
-If you use AGEB in academic work, please cite the paper.
+## 📊 Key Finding
+> Under a unified evaluation, current LLM-based text-to-image systems are **not yet reliable** for architectural design image generation.
+
+## 📄 Citation
+If you use AGEB, please cite the paper (to appear).
+
+## 📜 License
+Apache 2.0. See the [LICENSE](../LICENSE) file.
