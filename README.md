@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/workflow.png" alt="AGEB Workflow" width="75%">
+  <img src="assets/banner.svg" alt="AGEB Banner" width="100%">
 </p>
 
 <h1 align="center">AGEB: Architecture Generation and Evaluation Benchmark</h1>
@@ -12,6 +12,11 @@
 
 > LLMs are **not yet reliable** for generating architectural design images. AGEB provides a domain-grounded, automated benchmark to measure semantic fidelity, functional adequacy, and geometric consistency.
 
+## 🧠 Method Overview
+<p align="center">
+  <img src="assets/workflow.png" alt="AGEB Workflow" width="85%">
+</p>
+
 ## ✨ Highlights
 - Unified, automated **benchmarking pipeline** for architectural text-to-image systems
 - Three pillars: **Semantic (COT)** · **Functional (Circulation)** · **Geometric (Perspective)**
@@ -22,8 +27,8 @@
 ```
 ageb/
 ├── assets/
-│   ├── workflow.png
-│   └── cot_workflow.png
+│   ├── banner.svg
+│   └── workflow.png
 ├── configs/
 ├── docs/
 ├── requirements.txt
@@ -56,11 +61,6 @@ python src/orchestrator.py
    ```bash
    python src/analysis/comprehensive_analysis.py
    ```
-
-## 🧠 Method Overview
-<p align="center">
-  <img src="assets/cot_workflow.png" alt="COT Workflow" width="70%">
-</p>
 
 ## 📊 Key Finding
 > Under a unified evaluation, current LLM-based text-to-image systems are **not yet reliable** for architectural design image generation.
